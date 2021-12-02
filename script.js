@@ -61,7 +61,7 @@ myImage.addEventListener("load", function () {
 
   // create particle storage and number
   let particleArray = [];
-  const numberOfParticles = 1000;
+  const numberOfParticles = 50000;
 
   // create array to store mapped image information
   let mappedImage = [];
@@ -125,7 +125,7 @@ myImage.addEventListener("load", function () {
       let movement = 2.5 - (this.speed + 1.1) * this.velocity;
 
       //   changes how quickly the particles spin
-      this.angle += Math.random() * 0.009;
+      this.angle += Math.random() * 0.08 * this.speed;
 
       //   adjust these values to change direction of fall
       this.y += movement * Math.sin(this.angle);
@@ -187,7 +187,7 @@ myImage.addEventListener("load", function () {
       }
       //   ctx.beginPath();
       //   ctx.fillStyle = mappedImage[this.position1][this.position2][1];
-      ctx.arc(this.x, this.y, this.size / 5, 0, Math.PI * 2);
+      //   ctx.arc(this.x, this.y, this.size / 5, 0, Math.PI * 2);
       //   ctx.fill();
 
       ctx.rect(this.x, this.y, this.size * 2, this.size * 2);
@@ -201,7 +201,7 @@ myImage.addEventListener("load", function () {
   }
   init();
   function animate() {
-    ctx.globalAlpha = 0.01;
+    // ctx.globalAlpha = 0.01;
     ctx.fillStyle = "rgb(0,0,0)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 0.2;
