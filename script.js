@@ -61,7 +61,7 @@ myImage.addEventListener("load", function () {
 
   // create particle storage and number
   let particleArray = [];
-  const numberOfParticles = 50000;
+  const numberOfParticles = 5000;
 
   // create array to store mapped image information
   let mappedImage = [];
