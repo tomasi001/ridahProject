@@ -122,10 +122,10 @@ myImage.addEventListener("load", function () {
         this.speed = mappedImage[this.position1][this.position2][0];
       }
 
-      let movement = 2.5 - (this.speed + 50) + this.velocity;
+      let movement = 2.5 - (this.speed + 1.1) * this.velocity;
 
       //   changes how quickly the particles spin
-      this.angle += Math.random() * 0.02;
+      this.angle += Math.random() * 0.009;
 
       //   adjust these values to change direction of fall
       this.y += movement * Math.sin(this.angle);
@@ -185,6 +185,10 @@ myImage.addEventListener("load", function () {
       if (chance > 0.99) {
         ctx.fillStyle = "white";
       }
+      //   ctx.beginPath();
+      //   ctx.fillStyle = mappedImage[this.position1][this.position2][1];
+      ctx.arc(this.x, this.y, this.size / 5, 0, Math.PI * 2);
+      //   ctx.fill();
 
       ctx.rect(this.x, this.y, this.size * 2, this.size * 2);
       ctx.fill();
